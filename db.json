@@ -1,0 +1,23 @@
+{
+    "signup": 
+    [
+    {
+      "fname": "steve",
+      "lname": "jobs",
+      "email": "abc123@gmail.com",
+      "Mobileno": 123456789,
+      "password": "123456789",
+      "id": 1,
+      "admin": 0
+    },
+    {
+      "fname": "lokesh",
+      "lname": "loki",
+      "email": "loki123@gmail.com",
+      "Mobileno": 32412311231,
+      "password": "123123",
+      "id": 2,
+      "admin": 1
+    }
+    ]
+}
