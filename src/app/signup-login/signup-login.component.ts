@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import * as $ from 'jquery'
+import { ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
 
 @Component({
   selector: 'app-signup-login',
@@ -13,9 +12,11 @@ export class SignupLoginComponent implements OnInit {
   signUp:FormGroup|any
   signuser:any
   login:FormGroup|any;
-  islogin:boolean=true;
-  constructor(private router:Router,private _http:HttpClient,private fb:FormBuilder) { }
-
+  islogin:any
+  routedata:any
+  constructor(private router:Router,private _http:HttpClient,private fb:FormBuilder, private activatedRoute: ActivatedRoute) { 
+    this.islogin=this.activatedRoute.snapshot.data['isLogin']
+  }
    Signedup(signUp:FormGroup)
   {
     this.signuser=this.signUp.value.fname
@@ -23,12 +24,12 @@ export class SignupLoginComponent implements OnInit {
     .subscribe(res=>{
       alert('You are successfully Signed in')
       this.signUp.reset();
+      this.router.navigate(['login']);
     },err=>{
       alert('something is wrong')
     }
     )
   }  
-
   logindata(login:FormGroup){
     this._http.get<any>("http://localhost:3000/signup")
     .subscribe(res=>{
@@ -48,9 +49,7 @@ export class SignupLoginComponent implements OnInit {
       alert('Something was wrong')
     })
   }
-  
-  ngOnInit() 
-  {
+  ngOnInit(){
     this.signUp= this.fb.group({
       fname: ["",Validators.required],
       lname: [],
@@ -62,6 +61,12 @@ export class SignupLoginComponent implements OnInit {
       fname : ['',Validators.required],
       password :['',Validators.required]
     })  
+    
   }
-
+  loggedIn(){
+    this.router.navigate(['login'])
+  }
+  signedUp(){
+      this.router.navigate(['signup'])
+  }
 }

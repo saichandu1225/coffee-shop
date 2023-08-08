@@ -1,5 +1,5 @@
 <div class="container" style="margin: 0px;padding: 0px;">
-    <form [formGroup]="signUp" *ngIf="!islogin"  (ngSubmit)="Signedup(signUp)" class="form-box">
+    <form [formGroup]="signUp"  *ngIf="!islogin"  (ngSubmit)="Signedup(signUp)" class="form-box">
         <h3>Register Your Details</h3>
         <div class="form-group">
             <label>First Name</label>
@@ -25,7 +25,7 @@
         </div>
         <small class="text-danger" *ngIf="signUp.controls['password'].dirty && signUp.hasError('required','password')">Password is required <br></small>
   
-        <span>You have Already Account<a  role="button" (click)="islogin=true"  style="color: red;">&nbsp; &nbsp;SignIn</a></span>
+        <span>You have Already Account<a  role="button" (click)="loggedIn()"  style="color: red;">&nbsp; &nbsp;SignIn</a></span>
         <br/>
         <button [disabled]="signUp.invalid" type="submit" class="btn btn-success">Create Account</button>
     </form>
@@ -44,7 +44,7 @@
     
           <small class="text-danger" *ngIf="login.controls['password'].dirty && login.hasError('required','password')">Password is required <br></small>
     
-          <span><a  role="button" (click)="islogin=false" style="color: red;">&nbsp; &nbsp;Create Account</a></span>
+          <span><a  role="button" (click)="signedUp()" style="color: red;">&nbsp; &nbsp;Create Account</a></span>
           <br/>
           <button [disabled]="login.invalid" type="submit" class="btn btn-success">login</button>
       </form>

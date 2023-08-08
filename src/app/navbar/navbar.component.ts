@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
+// import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,11 +11,11 @@ export class NavbarComponent implements OnInit {
   title = 'ecommerce';
   cartProducts: any[] = [];
   subTotal: number = 0;
-  constructor(private productService: ProductService, private router: Router) {
-    this.productService.cartAddedSubject.subscribe(res=> {
-      debugger;
-      this.loadCart();
-    })
+  constructor( private router: Router) {
+    // this.productService.cartAddedSubject.subscribe(res=> {
+    //   debugger;
+    //   this.loadCart();
+    // })
   }
 
   ngOnInit(): void {
@@ -27,12 +27,12 @@ export class NavbarComponent implements OnInit {
 
   loadCart() {
     this.subTotal = 0;
-    this.productService.getCartItemsByCustId(1).subscribe((res: any)=> {
-      this.cartProducts = res.data;
-      this.cartProducts.forEach(element => {
-          this.subTotal =  this.subTotal + element.productPrice;
-      });
-      debugger;
-    })
+    // this.productService.getCartItemsByCustId(1).subscribe((res: any)=> {
+    //   this.cartProducts = res.data;
+    //   this.cartProducts.forEach(element => {
+    //       this.subTotal =  this.subTotal + element.productPrice;
+    //   });
+    //   debugger;
+    // })
   }
 }
