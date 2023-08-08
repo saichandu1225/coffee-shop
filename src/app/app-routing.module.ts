@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: "navbar",
-    component: NavbarComponent,
+    loadChildren:()=>import('./navbar/navbar.module').then(m=>m.NavbarModule),
     canActivate:[LoginAuthServiceService]
   },
   {
