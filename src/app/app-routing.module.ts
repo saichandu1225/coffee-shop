@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { NavbarComponent } from './navbar/navbar.component';
 import { SignupLoginComponent } from './signup-login/signup-login.component';
 import { LoginAuthServiceService } from './authGuards/login-auth-service.service';
 
@@ -24,6 +23,10 @@ const routes: Routes = [
     path: "navbar",
     loadChildren:()=>import('./navbar/navbar.module').then(m=>m.NavbarModule),
     canActivate:[LoginAuthServiceService]
+  },
+  {
+    path: "cartmod",
+    loadChildren:()=>import('./cart-mod/cart-mod.module').then(m=>m.CartModModule),
   },
   {
     path:"**",
