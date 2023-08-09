@@ -1,0 +1,14 @@
+<div class="d-flex"  >
+  <div class="card"  *ngFor="let item of cardsData" style="width: 16rem;">
+    <img class="card-img-top"  src="{{item.URL}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.Title}}</h5>
+      <div class="row" style="height: 28px;font-size: 19px;margin-bottom: 8px;">
+        <div class="col-6">Price</div>
+        <div class="col-6">{{item.price}}</div>
+      </div>
+      <button class="btn btn-primary"  id="addCart">ADD CART</button>
+      <button class="btn btn-primary" style="float: right;">BUY NOW</button>
+    </div>
+  </div>
+  </div>

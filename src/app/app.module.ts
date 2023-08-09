@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { CartComponent } from './pages/cart/cart.component';
-import { SaleComponent } from './pages/sale/sale.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupLoginComponent } from './signup-login/signup-login.component';
 import { LoginAuthServiceService } from './authGuards/login-auth-service.service';
+import { DashBoardModule } from './dash-board/dash-board.module';
+import { CartModModule } from './cart-mod/cart-mod.module';
+import { SharedModule } from './shared/shared.module';
+import { SideMenuModule } from './side-menu/side-menu.module';
+import { UserModModule } from './user-mod/user-mod.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CartComponent,
-    SaleComponent,
     NavbarComponent,
     SignupLoginComponent
   ],
@@ -28,6 +25,11 @@ import { LoginAuthServiceService } from './authGuards/login-auth-service.service
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DashBoardModule,
+    CartModModule,
+    SharedModule,
+    SideMenuModule,
+    UserModModule
   ],
   providers: [LoginAuthServiceService],
   bootstrap: [AppComponent]
