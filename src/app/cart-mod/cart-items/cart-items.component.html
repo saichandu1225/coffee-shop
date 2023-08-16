@@ -1,3 +1,16 @@
-<p>
-  cart-items works!
-</p>
+
+  <div class="" style="overflow-y: scroll;height:600px;">
+    <p>SubTotal</p>
+    <P>$238</P>
+    <button>Go to cart</button>
+  
+    <div *ngFor="let item of menuitems">
+      <hr>
+      <div class="card">
+        <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
+        <div class="card-body">
+          <p>{{item.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

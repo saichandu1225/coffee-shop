@@ -1,0 +1,17 @@
+
+router-outlet{
+    width:88%
+}
+app-footer{
+    width: 100%;
+    height: 100px;
+    background-color: burlywood;
+    position: absolute;
+    bottom: 0px;
+}
+app-cart-items{
+    float: right;
+    width: 12%;
+    height: 100vh;  
+    border-left: 1px solid whitesmoke;
+}

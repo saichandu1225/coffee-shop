@@ -29,6 +29,22 @@ const routes: Routes = [
     loadChildren:()=>import('./cart-mod/cart-mod.module').then(m=>m.CartModModule),
   },
   {
+    path: "dashboard",
+    loadChildren:()=>import('./dash-board/dash-board.module').then(m=>m.DashBoardModule),
+  },
+  {
+    path: "shared",
+    loadChildren:()=>import('./shared/shared.module').then(m=>m.SharedModule),
+  },
+  {
+    path: "sideMenu",
+    loadChildren:()=>import('./side-menu/side-menu.module').then(m=>m.SideMenuModule),
+  },
+  {
+    path: "user",
+    loadChildren:()=>import('./user-mod/user-mod.module').then(m=>m.UserModModule),
+  },
+  {
     path:"**",
     redirectTo:"navbar",
   }

@@ -8,7 +8,32 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-
+  cartitems:any =[
+    {
+      title:"coffee",
+        img:"../assets/images/milktea.jpg",
+        Name:"Tea",
+        price:"120"
+      },
+      {
+        title:"coffee",
+        img:"../assets/images/espresso.jpg",
+        Name:"Tea",
+        price:"120"
+      },
+      {
+        title:"coffee",
+        img:"../assets/images/espresso.jpg",
+        Name:"Tea",
+        price:"120"
+      },
+      {
+        title:"coffee",
+        img:"../assets/images/espresso.jpg",
+        Name:"Tea",
+        price:"120"
+      },
+    ]
   ngOnInit(): void {
   }
  
