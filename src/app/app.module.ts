@@ -12,12 +12,14 @@ import { SharedModule } from './shared/shared.module';
 import { SideMenuModule } from './side-menu/side-menu.module';
 import { UserModModule } from './user-mod/user-mod.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    SignupLoginComponent
-  ],
+    SignupLoginComponent,
+      FooterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
