@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CurrencyFormatPipe } from 'src/app/currency-format.pipe/currency-format.pipe';
 
 @Component({
   selector: 'app-sub-menu',
   templateUrl: './sub-menu.component.html',
-  styleUrls: ['./sub-menu.component.css']
+  styleUrls: ['./sub-menu.component.css'],
 })
-export class SubMenuComponent implements OnInit {
+export class SubMenuComponent {
+  @Input() menuItems: any[] = [];
+  @Input() menuName: string = '';
+  @Input() showSubMenu: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  toggleSubMenu() {
+    this.showSubMenu = !this.showSubMenu;
   }
-
 }

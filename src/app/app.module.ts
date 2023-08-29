@@ -9,10 +9,13 @@ import { LoginAuthServiceService } from './authGuards/login-auth-service.service
 import { DashBoardModule } from './dash-board/dash-board.module';
 import { CartModModule } from './cart-mod/cart-mod.module';
 import { SharedModule } from './shared/shared.module';
-import { SideMenuModule } from './side-menu/side-menu.module';
-import { UserModModule } from './user-mod/user-mod.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { FooterComponent } from './footer/footer.component';
+import { SideMenuModule } from './side-menu/side-menu.module';
+
+
+
+
 
 @NgModule({
   declarations: [	
@@ -30,10 +33,14 @@ import { FooterComponent } from './footer/footer.component';
     CartModModule,
     SharedModule,
     SideMenuModule,
-    UserModModule,
     NavbarModule
   ],
   providers: [LoginAuthServiceService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+  
+  }
+}
+

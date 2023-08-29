@@ -1,0 +1,24 @@
+.menu-item {
+  margin-top: 10px;
+}
+
+.menu-item-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.menu-symbol {
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.sub-menu {
+  padding-left: 20px;
+  display: none;
+}
+
+.sub-menu.active {
+  display: block;
+}
