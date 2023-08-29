@@ -1,0 +1,48 @@
+<div class="container-fluid justify-content-center" *ngIf="cartitems.length">
+  <div class="row">
+  <div class="col-sm-8">
+    <div class="w-100" *ngFor="let item of cartitems;let i=index">  
+      <div class="card ">
+        <div class="row">
+          <div class="col-4">
+            <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
+          </div>
+          <div class="col-5">
+            <div class="card-body">
+              <h1>{{item.Name}}</h1>
+              <span>{{cart.getPriceDetailsInCArtItems(item)| currency:'INR'}}</span>
+            </div>
+            <div class="row">
+              <div class="col-6">Quantity</div>
+              <div class="col-6 d-flex justify-content-between">
+                <button (click)="decItemCount(i)" style="border-radius: 50%; background-color: tomato;border: 0px;color: white;font-size: 14px;" [disabled]="item.qty==1"><i class="fa-solid fa-minus"></i></button>
+                <div class="" >{{item.qty}}</div>
+                <button (click)="incItemCount(i)" style="border-radius: 50%; background-color: tomato;border: 0px;color:white;font-size: 14px;" ><i class="fa-solid fa-plus"></i></button>        </div>
+            </div>
+          </div>
+          <div class="col-3 pt-5">
+            <button class="btn btn-secondary" (click)="removeItem(item)">Remove Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <h3>Summary</h3>
+    <li><span>Amount: </span></li>
+    <li><span>Tax:</span></li>
+    <li><span>Discount:</span></li>
+    <li><span>
+        <h4>Total</h4>
+      </span></li>
+    <button class="btn btn-success">Checkout</button>
+  </div>
+</div>
+</div>
+<div *ngIf="!cartitems.length">
+  <h1>Oops</h1>
+  <img src="../../../assets/images/emptycart.jpg" height="200" width="200">
+  <h1>No items in your cart </h1>
+  <h3>Add items to your cart</h3>
+  <button class="btn btn-success">Shop Now</button>
+</div>
