@@ -5,7 +5,7 @@ import { NavbarComponent } from './navbar.component';
 
 const routes: Routes = [
         {
-        path:"",
+        path:"**",
         component:NavbarComponent
       }
     ]

@@ -1,15 +1,14 @@
 
   <div class="" style="overflow-y: scroll;height:600px;">
+    <button class="btn btn-primary" (click)="cartList()" >Go to cart</button>
     <p>SubTotal</p>
     <P>$238</P>
-    <button>Go to cart</button>
-  
-    <div *ngFor="let item of menuitems">
+    <div class="col-sm-8" *ngFor="let item of cartitems">
       <hr>
       <div class="card">
         <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
         <div class="card-body">
-          <p>{{item.price}}</p>
+          <p>{{item.price | currency:"₹"}}</p>
         </div>
       </div>
     </div>

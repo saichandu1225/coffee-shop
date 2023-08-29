@@ -1,3 +1,22 @@
-<p>
-  item-details works!
-</p>
+
+<div class="container-fluid mt-4" *ngFor="let item of cardsData">
+  <div class="card" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../../../assets/images/espresso.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{item.Name}}</h5>
+          <p class="card-text">Price: {{item.price}}</p>
+          <input>
+          <p class="card-text">{{item.qty}}</p>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <button class="btn btn-danger" >ADD CART</button>
+          <button class="btn btn-success" style="float: right;">BUY NOW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class SidemenuComponent implements OnInit {
 
   constructor() { }
-
+  sidemenuData:any=[
+    {
+      name:"xyz",
+      price:"120"
+    },
+    {
+      name:"xyz",
+      price:"120"
+    },
+    {
+      name:"xyz",
+      price:"120"
+    },
+    {
+      name:"xyz",
+      price:"120"
+    },
+    {
+      name:"xyz",
+      price:"120"
+    },
+  ]
   ngOnInit() {
   }
 

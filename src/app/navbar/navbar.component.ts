@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
+import { CartitemsService } from '../shared-services/cartitems.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,28 +11,21 @@ export class NavbarComponent implements OnInit {
   title = 'ecommerce';
   cartProducts: any[] = [];
   subTotal: number = 0;
-  constructor( private router: Router) {
-    // this.productService.cartAddedSubject.subscribe(res=> {
-    //   debugger;
-    //   this.loadCart();
-    // })
+  cartcount:any=0
+  constructor( private router: Router,private cartitemservice:CartitemsService) {
+   
   }
-
   ngOnInit(): void {
-    this.loadCart();
+    this.cartitemservice.cartSubject.subscribe((cartitem:any)=>{
+      this.cartcount=cartitem.length
+    })
+   
   }
   redirectToSale() {
     this.router.navigateByUrl("/sale");
   }
-
-  loadCart() {
-    this.subTotal = 0;
-    // this.productService.getCartItemsByCustId(1).subscribe((res: any)=> {
-    //   this.cartProducts = res.data;
-    //   this.cartProducts.forEach(element => {
-    //       this.subTotal =  this.subTotal + element.productPrice;
-    //   });
-    //   debugger;
-    // })
+ ShowCart(){
+   this.cartitemservice.displaysidecart()
+ 
   }
 }

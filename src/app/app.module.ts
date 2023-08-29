@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,12 +13,17 @@ import { SideMenuModule } from './side-menu/side-menu.module';
 import { UserModModule } from './user-mod/user-mod.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { FooterComponent } from './footer/footer.component';
+import { CartitemsService } from './shared-services/cartitems.service';
+import { AdminComponent } from './admin/admin.component';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     SignupLoginComponent,
-      FooterComponent
+      FooterComponent,
+      AdminComponent,
+      
    ],
   imports: [
     BrowserModule,
@@ -31,9 +36,10 @@ import { FooterComponent } from './footer/footer.component';
     SharedModule,
     SideMenuModule,
     UserModModule,
-    NavbarModule
+    NavbarModule,
+    PipesModule
   ],
-  providers: [LoginAuthServiceService],
-  bootstrap: [AppComponent]
+  providers: [LoginAuthServiceService,CartitemsService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
