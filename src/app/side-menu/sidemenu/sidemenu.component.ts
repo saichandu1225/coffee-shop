@@ -35,7 +35,6 @@ export class SidemenuComponent implements OnInit {
   activeSubMenus: { [key: string]: boolean } = {};
 
   ngOnInit() {}
-
   getObjKeys(obj: Object) {
     return Object.keys(obj);
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartitemsService } from './shared-services/cartitems.service';
 
 @Component({
   selector: 'app-root',
@@ -7,34 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  cartitems:any =[
-    {
-      title:"coffee",
-        img:"../assets/images/milktea.jpg",
-        Name:"Tea",
-        price:"120"
-      },
-      {
-        title:"coffee",
-        img:"../assets/images/espresso.jpg",
-        Name:"Tea",
-        price:"120"
-      },
-      {
-        title:"coffee",
-        img:"../assets/images/espresso.jpg",
-        Name:"Tea",
-        price:"120"
-      },
-      {
-        title:"coffee",
-        img:"../assets/images/espresso.jpg",
-        Name:"Tea",
-        price:"120"
-      },
-    ]
-  ngOnInit(): void {
+isshow:any
+  constructor(private cartservice:CartitemsService){
+  
   }
- 
+  ngOnInit(){
+    this.cartservice.cartSubject1.subscribe((cartitem:any)=>{
+      this.isshow=cartitem;
+    })
+  }
+
+
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SideOutComponent } from './side-out/side-out.component';
 import { sharedRoutingModule } from './shared-routing.module';
+import { SideOutComponent } from './side-out/side-out.component';
 
 
 

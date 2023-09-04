@@ -13,5 +13,13 @@ export class SubMenuComponent {
 
   toggleSubMenu() {
     this.showSubMenu = !this.showSubMenu;
-  }
+// export class SubMenuComponent implements OnInit {
+// @Input() submenudata:any=[]
+//   constructor() {
+//    }
+//   ngOnInit() {
+//     console.log(this.submenudata)
+//   }
+//
+ }
 }

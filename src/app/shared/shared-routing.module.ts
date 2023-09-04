@@ -5,8 +5,8 @@ import { SideOutComponent } from "./side-out/side-out.component";
 
 const routes: Routes = [
     {
-    path:"",
-    component:SideOutComponent
+        path:"",
+        component:SideOutComponent
   }
 ]
 @NgModule({

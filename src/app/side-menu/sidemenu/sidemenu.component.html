@@ -1,13 +1,13 @@
 <div class="menu-container">
-  <div *ngFor="let item of getObjKeys(fooditems)" class="menu-category">
-    <!-- <div class="menu-category-title" (click)="toggleSubMenu(item)">
-      <span class="menu-symbol">{{ isSubMenuOpen(item) ? '-' : '+' }}</span>
-      {{ item }}
-    </div> -->
-       <app-sub-menu
-      [menuItems]="fooditems[item]"
-      [menuName]="item"
-      [showSubMenu]="isSubMenuOpen(item)"
-    ></app-sub-menu> 
+    <div *ngFor="let item of getObjKeys(fooditems)" class="menu-category">
+      <!-- <div class="menu-category-title" (click)="toggleSubMenu(item)">
+        <span class="menu-symbol">{{ isSubMenuOpen(item) ? '-' : '+' }}</span>
+        {{ item }}
+      </div> -->
+         <app-sub-menu
+        [menuItems]="fooditems[item]"
+        [menuName]="item"
+        [showSubMenu]="isSubMenuOpen(item)"
+      ></app-sub-menu> 
+    </div>
   </div>
-</div>
