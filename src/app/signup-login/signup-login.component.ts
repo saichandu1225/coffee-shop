@@ -40,7 +40,7 @@ export class SignupLoginComponent implements OnInit {
         alert('you are successfully logged In');
         localStorage.setItem('user',JSON.stringify(user))
         this.login.reset();
-        this.router.navigate(['navbar']);
+        this.router.navigate(['dashboard']);
       }
       else{
         alert('User not found');

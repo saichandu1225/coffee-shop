@@ -1,0 +1,32 @@
+.menu-container {
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+.menu-category {
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-category-title {
+  display: flex;
+  align-items: center;
+}
+
+.menu-symbol {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.sub-menu {
+  padding-left: 20px;
+  display: none;
+}
+
+.sub-menu.active {
+  display: block;
+}

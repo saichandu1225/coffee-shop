@@ -1,14 +1,25 @@
-<div class="d-flex"  >
-  <div class="card"  *ngFor="let item of cardsData" style="width: 16rem;">
-    <img class="card-img-top"  src="{{item.URL}}" alt="Card image cap">
+<ng-container *ngIf="cardsData">
+<div class="d-flex justify-content-start"   *ngFor="let itemkey of cardsData|keyValue">
+  <div class="card m-4"   *ngFor="let item of cardsData[itemkey] let i=index" style="width: 16rem;">
+    <img class="card-img-top "(click)="cartdetails()" height="200" src="{{item.img}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{item.Title}}</h5>
+      <h5 class="card-title">{{item.name}}</h5>
       <div class="row" style="height: 28px;font-size: 19px;margin-bottom: 8px;">
         <div class="col-6">Price</div>
-        <div class="col-6">{{item.price}}</div>
+        <div class="col-6">{{item.price | currency:"₹"}}</div>
       </div>
-      <button class="btn btn-primary"  id="addCart">ADD CART</button>
-      <button class="btn btn-primary" style="float: right;">BUY NOW</button>
+      <div class="row">
+        <div class="col-6">Quantity</div>
+        <div class="col-6 d-flex justify-content-between">
+          <button (click)="decItemCount(i)" style="border-radius: 50%; background-color: tomato;border: 0px;color: white;font-size: 14px;" [disabled]="item.qty==1"><i class="fa-solid fa-minus"></i></button>
+                <div class="" >{{item.qty}}</div>
+                <button (click)="incItemCount(i)" style="border-radius: 50%; background-color: tomato;border: 0px;color:white;font-size: 14px;" ><i class="fa-solid fa-plus"></i></button></div>
+      </div>
+      <br>
+      <button class="btn btn-danger" (click)="addItemsToCart(item)"  *ngIf="!isProductIncart">Add to CART</button>
+      <button class="btn btn-danger" *ngIf="isProductIncart">Go to CART</button>
+      <button class="btn btn-success" style="float: right;">BUY NOW</button>
     </div>
   </div>
-  </div>
+</div>
+</ng-container>

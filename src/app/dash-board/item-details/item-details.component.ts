@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartitemsService } from 'src/app/shared-services/cartitems.service';
 
 @Component({
   selector: 'app-item-details',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDetailsComponent implements OnInit {
 
-  constructor() { }
+  cardsData:any=[
+    {
+      title:"coffee",
+        img:"../assets/images/milktea.jpg",
+        Name:"Espresso coffee",
+        price:"120",
+        qty:"0"
+      }
+  ];
+  constructor(private cartitemservice:CartitemsService) { }
 
   ngOnInit() {
   }
-
+  addItemsToCart(item:any){
+    this.cartitemservice.selectedItems.push(item);
+  }
 }

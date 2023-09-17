@@ -1,3 +1,12 @@
-<p>
-  sub-menu works!
-</p>
+
+<div class="menu-item">
+  <div class="menu-item-title" (click)="toggleSubMenu()">
+    {{ menuName }}
+    <span class="menu-symbol">{{ showSubMenu ? '-' : '+' }}</span>
+  </div>
+  <div class="sub-menu" [ngClass]="{ active: showSubMenu }">
+    <p *ngFor="let item of menuItems">
+      {{ item.name }} {{ item.prize | currencyFormat }}
+    </p>
+  </div>
+</div>

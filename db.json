@@ -1,6 +1,5 @@
 {
-    "signup": 
-    [
+  "signup": [
     {
       "fname": "steve",
       "lname": "jobs",
@@ -18,6 +17,50 @@
       "password": "123123",
       "id": 2,
       "admin": 1
+    },
+    {
+      "fname": "Sai",
+      "lname": "Chandu",
+      "email": "SaiChandu@gmail.com",
+      "Mobileno": 123421342,
+      "password": "121212",
+      "id": 3
     }
-    ]
+  ],
+  "coffee":[
+    {
+      "img":"../assets/images/milktea.jpg",
+      "Name":"milktea",
+      "price":20,
+      "qty":1
+    },
+    {
+      "img":"../assets/images/MasalaTea.jpg",
+      "Name":"MasalaTea",
+      "price":120,
+      "qty":1
+    },
+    {
+      "img":"../assets/images/espresso.jpg",
+      "Name":"espresso",
+      "price":110,
+      "qty":1
+    },
+    {
+      
+      "img":"../assets/images/cappuccino.jpg",
+      "Name":"cappuccino",
+      "price":200,
+      "qty":1
+    }
+  ],
+  "cakes":[
+    {
+        "img":"",
+        "Name":"chocolate cake",
+        "price":100,
+        "qty":0
+
+    }
+  ]
 }

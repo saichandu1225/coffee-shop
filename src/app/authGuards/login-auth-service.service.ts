@@ -19,5 +19,6 @@ export class LoginAuthServiceService implements CanActivate {
       this.route.navigate(['login']);
       return false
     }
+    
   }
 }
