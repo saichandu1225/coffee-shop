@@ -49,7 +49,6 @@ export class CartitemsService implements OnInit{
     ]
     }
 constructor(private keyvalue:KeyvaluePipe) { 
-  // this.keyvalue.transform(this.cardsData);
   console.log(this.keyvalue.transform(this.cardsData))
 
 }
@@ -70,8 +69,8 @@ constructor(private keyvalue:KeyvaluePipe) {
     console.log(priceDetails)
     return priceDetails
   }
-  incItemCount(index:any){
- 
+  incItemCount(index:any)
+  {
     this.selectedItems[index].qty++;
     this.cartSubject.next(this.selectedItems)
   }

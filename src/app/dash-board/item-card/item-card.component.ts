@@ -18,16 +18,21 @@ export class ItemCardComponent implements OnInit {
   {
     this.cardsData=this.cartitemservice.cardsData
     this.cartInboxItem=this.cartitemservice.selectedItems
+    this.itemPrice=this.cartitemservice.getPriceDetailsInCArtItems(this.cardsData)
   }
   ngOnInit() {
-    // const keyvalue=new KeyvaluePipe();
-    // console.log(keyvalue.transform(this.cardsData,"value"))
   }
   cartdetails(){
     this.router.navigate(['itemDetails']);
   }
   addItemsToCart(item:any){
     this.cartitemservice.addItemToCart(item)
+  }
+  decItemCount(item:any){
+    this.cardsData[item].qty--;
+    }
+  incItemCount(item:any){
+    this.cardsData[item].qty++;
   }
 
 }
